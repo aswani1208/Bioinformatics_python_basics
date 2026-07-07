@@ -5,7 +5,7 @@ Learning Python from scratch, with a focus on machine learning, AI, and bioinfor
 
 ## Goal
 
-Build practical skills to work with biological data (DNA/RNA sequences, gene expression, cancer datasets) and apply ML/AI techniques to real bioinformatics problems.
+Build practical skills to work with biological data (DNA/RNA sequences, gene expression, cancer datasets) and apply ML/AI techniques to real bioinformatics prolems.
 
 ## Roadmap
 
@@ -38,5 +38,8 @@ Learned core Python (variables, string methods, f-strings, basic math) by workin
 - GC content calculation — a real metric used in genomics
 - Reverse complement logic (A↔T, C↔G)
 - Motif detection using the in operator (e.g. checking if "CGAT" appears in a sequence)
+- Transcription (DNA → RNA) by replacing T with U
+- Codon splitting using a list comprehension (dna[i:i+3] in steps of 3)
+- Sequence validation using set() and all() with a generator expression
 ---
 *Updated as I progress through the roadmap above.*
