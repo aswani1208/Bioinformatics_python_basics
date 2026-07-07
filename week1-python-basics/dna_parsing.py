@@ -16,7 +16,8 @@ gc_content = (gc_count / len(dna)) * 100
 print(f"GC content: {gc_content:.2f}%")
 
 # reverse complement of the sequence is obtained by reversing the sequence and replacing A with T, T with A, C with G, and G with C
-rev_complement = dna[::-1].replace("A","T").replace("T","A").replace("C","G").replace("G","C")
+complement_map = str.maketrans("ATCG", "TAGC")
+rev_complement = dna[::-1].translate(complement_map)
 print("The reverse complement of the sequence is:",rev_complement)
 
 # Check the sequence for a specific motif
@@ -26,3 +27,29 @@ if motif in dna:
     print("The motif", motif, "is presenet in the sequence.")
 else:
     print("The motif", motif, "is not present in the sequence")
+
+
+# Transcription of DNA to RNA is done by replacing T with U
+
+rna = dna.replace("T","U")
+print("the transcribed RNA sequence is:", rna)
+
+# Codon splitting: A codon is a sequence of three nucleotides that corresponds to a specific amino acid or stop signal during protein synthesis. We can split the DNA sequence into codons.
+
+codons = [dna[i:i+3] for i in range(0, len(dna), 3)]
+print("The codons in the sequence are:", codons)
+
+# Input validation: Check if the sequence contains only valid nucleotides (A, T, C, G)
+
+valid_nucleotides = {"A","T","C","G"}
+is_valid = True
+
+for base in dna:
+    if base not in valid_nucleotides:
+        is_valid = False
+        break
+print("The sequence contains only valid nucleotides:", is_valid)
+
+valid_nucleotides = set("ATCG")
+check_validity = all(base in valid_nucleotides for base in dna)
+print("The sequence contains only valid nucleotides:", check_validity)
